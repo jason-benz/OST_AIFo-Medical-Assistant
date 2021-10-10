@@ -1,1 +1,6 @@
 /.idea/
+/documentation/report.aux
+/documentation/report.fdb_latexmk
+/documentation/report.fls
+/documentation/report.log
+/documentation/report.synctex.gz
