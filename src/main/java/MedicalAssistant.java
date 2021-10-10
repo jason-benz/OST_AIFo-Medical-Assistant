@@ -25,7 +25,7 @@ public class MedicalAssistant {
                         setSymptomIntensity(Integer.parseInt(value.getStringValue()));
                     }
                     break;
-                case "SymDuration":
+                case "SymStart":
                     if (!value.getStringValue().isEmpty()) {
                         setSymptomStart(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX").parse(value.getStringValue()));
                     }
