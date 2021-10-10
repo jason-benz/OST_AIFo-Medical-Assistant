@@ -1,13 +1,42 @@
-\documentclass[11pt, letterpaper]{report}
+\documentclass[11pt, letterpaper]{article}
 \usepackage[utf8]{inputenc}
 \title{Medical Assistent}
 \author{Adrian Locher, Jason Benz}
 \date{\today}
 
+\usepackage{graphicx}
+
 \begin{document}
+\pagenumbering{gobble}
 \maketitle
-\chapter{Introduction}
-\chapter{Java Client}
-\chapter{Backend}
-\chapter{Discussion}
+
+\newpage
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+
+\section{Introduction}
+    \subsection{subsection}
+        \paragraph{}
+            hello world
+            \begin{figure}[h!]
+                \includegraphics[]{ressources/img.jpg}
+                \caption{an image}
+                \label{fig:image1}
+            \end{figure}
+
+\newpage
+
+\section{Java Client}
+
+\newpage
+
+\section{Backend}
+
+\newpage
+
+\section{Discussion}
+
+
 \end{document} 
