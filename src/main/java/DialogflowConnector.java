@@ -10,9 +10,8 @@ public class DialogflowConnector {
 
     private static String sessionId;
 
-    public DialogflowConnector() throws IOException {
+    public DialogflowConnector() {
         sessionId = UUID.randomUUID().toString();
-        new SymptomTypes(PROJECT_ID);
     }
 
     public String getAnswer(String inputText, MedicalAssistant medicalAssistant) throws IOException, ParseException {
