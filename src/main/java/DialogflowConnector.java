@@ -36,8 +36,8 @@ public class DialogflowConnector {
         String intent = queryResult.getIntent().getDisplayName();
 
         if (intent.equals("check_symptoms")) {
-            boolean hasMayCorona = queryResult.getFulfillmentMessagesOrBuilder(0).toString().contains("corona-virus");
-            medicalAssistant.updateHealthInfo(queryResult.getParameters(), hasMayCorona);
+            medicalAssistant.checkCorona(queryResult.getWebhookPayload());
+            medicalAssistant.updateHealthInfo(queryResult.getParameters());
         }
     }
 }

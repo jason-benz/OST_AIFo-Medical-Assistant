@@ -12,9 +12,9 @@ public class MedicalAssistant {
     private int symptomIntensity;
     private Date symptomStart;
     private int symptomDuration;
-    private boolean hasMayCorona;
+    private Boolean hasMaybeCorona = null;
 
-    public void updateHealthInfo(Struct parameters, boolean hasMayCorona) throws ParseException {
+    public void updateHealthInfo(Struct parameters) throws ParseException {
         Set<Map.Entry<String, Value>> entries = parameters.getFieldsMap().entrySet();
 
         for (Map.Entry<String, Value> entry : entries) {
@@ -33,7 +33,6 @@ public class MedicalAssistant {
                     break;
                 case "SymType":
                     if (value.getListValue().getValuesCount() > 0) {
-                        this.hasMayCorona = hasMayCorona;
                         setSymptomType(value.getListValue().getValuesList());
                     }
                     break;
@@ -43,12 +42,21 @@ public class MedicalAssistant {
         }
     }
 
+    public void checkCorona(Struct webhookPayload) {
+        var payload = webhookPayload.getFieldsMap().entrySet();
+        for (Map.Entry<String, Value> entry : payload) {
+            if (entry.getKey().equals("hasMaybeCorona")) {
+                this.hasMaybeCorona = entry.getValue().getBoolValue();
+            }
+        }
+    }
+
     public String getReport() {
         DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
         String symptomTypesString = (symptomTypes == null ? "-" : symptomTypes.toString());
 
         return "Symptom type(s):\t" + symptomTypesString + "\n" +
-               "Is may corona:\t\t" + (symptomTypesString.equals("-") ? "-" : hasMayCorona) + "\n" +
+               "Is maybe corona:\t" + (hasMaybeCorona == null ? "-" : hasMaybeCorona) + "\n" +
                "Symptom intensity:\t" + (symptomIntensity == 0 ? "-" : symptomIntensity) + "\n" +
                "Symptom start:\t\t" + (symptomStart == null ? "-" : df.format(symptomStart)) + "\n" +
                "Symptom duration:\t" + (symptomDuration == 0 ? "-" : symptomDuration) + "\n";
