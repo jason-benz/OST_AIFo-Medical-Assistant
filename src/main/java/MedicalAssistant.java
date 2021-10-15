@@ -12,8 +12,10 @@ public class MedicalAssistant {
     private int symptomIntensity;
     private Date symptomStart;
     private int symptomDuration;
+    private boolean hasMayCorona;
 
-    public void updateHealthInfo(Struct parameters) throws ParseException {
+    public void updateHealthInfo(Struct parameters, boolean hasMayCorona) throws ParseException {
+        this.hasMayCorona = hasMayCorona;
         Set<Map.Entry<String, Value>> entries = parameters.getFieldsMap().entrySet();
 
         for (Map.Entry<String, Value> entry : entries) {
@@ -43,8 +45,10 @@ public class MedicalAssistant {
 
     public String getReport() {
         DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
+        String symptomTypesString = (symptomTypes == null ? "-" : symptomTypes.toString());
 
-        return "Symptom type(s):\t" + (symptomTypes == null ? "-" : symptomTypes) + "\n" +
+        return "Symptom type(s):\t" + symptomTypesString + "\n" +
+               "Is may corona:\t\t" + (symptomTypesString.equals("-") ? "-" : hasMayCorona) + "\n" +
                "Symptom intensity:\t" + (symptomIntensity == 0 ? "-" : symptomIntensity) + "\n" +
                "Symptom start:\t\t" + (symptomStart == null ? "-" : df.format(symptomStart)) + "\n" +
                "Symptom duration:\t" + (symptomDuration == 0 ? "-" : symptomDuration) + "\n";

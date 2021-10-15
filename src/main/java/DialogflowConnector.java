@@ -37,7 +37,8 @@ public class DialogflowConnector {
 
         switch (intent) {
             case "check_symptoms":
-                medicalAssistant.updateHealthInfo(queryResult.getParameters());
+                boolean hasMayCorona = queryResult.getFulfillmentMessagesOrBuilder(0).toString().contains("corona-virus");
+                medicalAssistant.updateHealthInfo(queryResult.getParameters(), hasMayCorona);
                 break;
         }
     }
