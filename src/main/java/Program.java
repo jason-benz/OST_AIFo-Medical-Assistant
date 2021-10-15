@@ -23,6 +23,7 @@ public class Program {
                     System.out.println(medicalAssistant.getReport());
                     continue;
                 }
+                System.out.println();
                 System.out.println(dialogflowConnector.getAnswer(line, medicalAssistant));
             }
             System.out.println("Goodbye");

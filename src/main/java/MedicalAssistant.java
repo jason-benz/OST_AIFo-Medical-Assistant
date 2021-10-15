@@ -15,7 +15,6 @@ public class MedicalAssistant {
     private boolean hasMayCorona;
 
     public void updateHealthInfo(Struct parameters, boolean hasMayCorona) throws ParseException {
-        this.hasMayCorona = hasMayCorona;
         Set<Map.Entry<String, Value>> entries = parameters.getFieldsMap().entrySet();
 
         for (Map.Entry<String, Value> entry : entries) {
@@ -34,6 +33,7 @@ public class MedicalAssistant {
                     break;
                 case "SymType":
                     if (value.getListValue().getValuesCount() > 0) {
+                        this.hasMayCorona = hasMayCorona;
                         setSymptomType(value.getListValue().getValuesList());
                     }
                     break;
@@ -54,39 +54,19 @@ public class MedicalAssistant {
                "Symptom duration:\t" + (symptomDuration == 0 ? "-" : symptomDuration) + "\n";
     }
 
-    public ArrayList<String> getSymptomTypes() {
-        return symptomTypes;
-    }
-
-    public void setSymptomType(List<Value> symptomTypes) {
+    private void setSymptomType(List<Value> symptomTypes) {
         this.symptomTypes = new ArrayList<>();
         for (var value : symptomTypes) {
             this.symptomTypes.add(value.getStringValue());
         }
     }
 
-    public int getSymptomIntensity() {
-        return symptomIntensity;
-    }
-
-    public void setSymptomIntensity(int symptomIntensity) {
+    private void setSymptomIntensity(int symptomIntensity) {
         this.symptomIntensity = symptomIntensity;
     }
 
-    public Date getSymptomStart() {
-        return symptomStart;
-    }
-
-    public void setSymptomStart(Date symptomStart) {
+    private void setSymptomStart(Date symptomStart) {
         this.symptomStart = symptomStart;
-        setSymptomDuration(symptomStart);
-    }
-
-    public int getSymptomDuration() {
-        return symptomDuration;
-    }
-
-    public void setSymptomDuration(Date symptomStart) {
-        symptomDuration = (int) ChronoUnit.DAYS.between(symptomStart.toInstant(), new Date().toInstant());
+        this.symptomDuration = (int) ChronoUnit.DAYS.between(symptomStart.toInstant(), new Date().toInstant());
     }
 }
