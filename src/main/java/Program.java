@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.text.ParseException;
 
 public class Program {
-    public static void main (String[] args) throws IOException {
+    public static void main (String[] args) {
         MedicalAssistant medicalAssistant = new MedicalAssistant();
         DialogflowConnector dialogflowConnector = new DialogflowConnector();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -23,6 +23,7 @@ public class Program {
                     System.out.println(medicalAssistant.getReport());
                     continue;
                 }
+                System.out.println();
                 System.out.println(dialogflowConnector.getAnswer(line, medicalAssistant));
             }
             System.out.println("Goodbye");
