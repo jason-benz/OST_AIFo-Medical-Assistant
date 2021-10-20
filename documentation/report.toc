@@ -1,0 +1,26 @@
+\contentsline {section}{\numberline {1}Einleitung}{1}{}%
+\contentsline {subsection}{\numberline {1.1}Motivation}{1}{}%
+\contentsline {paragraph}{}{1}{}%
+\contentsline {paragraph}{}{1}{}%
+\contentsline {paragraph}{}{1}{}%
+\contentsline {paragraph}{}{1}{}%
+\contentsline {section}{\numberline {2}Java Client}{2}{}%
+\contentsline {section}{\numberline {3}Backend}{3}{}%
+\contentsline {subsection}{\numberline {3.1}Übersicht}{3}{}%
+\contentsline {paragraph}{}{3}{}%
+\contentsline {subsection}{\numberline {3.2}Aufnahme von Symptomen}{3}{}%
+\contentsline {paragraph}{}{3}{}%
+\contentsline {paragraph}{}{3}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Parameter Entities}{4}{}%
+\contentsline {paragraph}{}{4}{}%
+\contentsline {paragraph}{}{4}{}%
+\contentsline {paragraph}{}{4}{}%
+\contentsline {subsection}{\numberline {3.3}Auswertung der Symptome}{4}{}%
+\contentsline {paragraph}{}{4}{}%
+\contentsline {paragraph}{}{4}{}%
+\contentsline {paragraph}{}{5}{}%
+\contentsline {paragraph}{}{5}{}%
+\contentsline {subsection}{\numberline {3.4}Termin buchen}{6}{}%
+\contentsline {paragraph}{}{6}{}%
+\contentsline {paragraph}{}{6}{}%
+\contentsline {section}{\numberline {4}Discussion}{7}{}%
