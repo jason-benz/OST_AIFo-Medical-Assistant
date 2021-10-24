@@ -20,10 +20,10 @@
 \contentsline {subsection}{\numberline {3.4}Auswertung der Symptome}{5}{}%
 \contentsline {paragraph}{}{5}{}%
 \contentsline {paragraph}{}{5}{}%
-\contentsline {paragraph}{}{5}{}%
 \contentsline {paragraph}{}{6}{}%
-\contentsline {subsection}{\numberline {3.5}Termin buchen}{6}{}%
 \contentsline {paragraph}{}{6}{}%
+\contentsline {subsection}{\numberline {3.5}Termin buchen}{7}{}%
+\contentsline {paragraph}{}{7}{}%
 \contentsline {paragraph}{}{7}{}%
 \contentsline {section}{\numberline {4}Discussion}{8}{}%
 \contentsline {subsection}{\numberline {4.1}Was wir gelernt haben}{8}{}%
@@ -31,6 +31,6 @@
 \contentsline {subsection}{\numberline {4.2}Limitationen}{8}{}%
 \contentsline {paragraph}{}{8}{}%
 \contentsline {paragraph}{}{8}{}%
-\contentsline {subsection}{\numberline {4.3}Weiterführbarkeit}{8}{}%
+\contentsline {subsection}{\numberline {4.3}Erweiterungsmöglichkeiten unserer Arbeit}{8}{}%
 \contentsline {paragraph}{}{8}{}%
 \contentsline {paragraph}{}{8}{}%

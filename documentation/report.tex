@@ -1,8 +1,14 @@
 \documentclass[11pt, letterpaper]{article}
 \usepackage[utf8]{inputenc}
+\renewcommand{\refname}{Referenzen}
+\renewcommand{\figurename}{Abbildung}
+\renewcommand{\tablename}{Tabelle}
+
 \title{Medical Assistent}
 \author{Adrian Locher, Jason Benz}
 \date{\today}
+
+
 
 \usepackage{graphicx}
 
@@ -22,13 +28,13 @@
             Die Frage, ob ein Arzt besucht werden soll, ist häufig ein Dilemma.
             Einerseits, will man nicht diejenige Person sein, welche bei unbedenklichen Symptomen
             überreagiert, andererseits könnten sich die Symptome ja verschlimmern und vielleicht
-            hätte der Arztbesuch das Problem frühzeitig beheben können. Aus solchen Gründen ist man ja
-            schliesslich versichert.
-
+            hätte der Arztbesuch das Problem frühzeitig beheben können. Ausserdem ist man schliesslich
+            versichert.
+            
         \paragraph{}
             Eine ganz andere Beudeutung hat dieses Dilemma ausserdem seit dem Anfang
             der Covid-19 Situation. Ärzte und anderes Gesundheitspersonal, gelten als besonders
-            stark ausgelastet. Auf der kehrseite hingegen, sollte man bei Covid-19-artigen Symptomen
+            stark ausgelastet. Auf der Kehrseite hingegen, sollte man bei Covid-19-artigen Symptomen
             auch nicht zögern und sich testen lassen. Welche Symptome nun genau als "Covid-Symptome"
             gelten und welche nicht, ist teilweise sehr unübersichtlich, was die lage auch nicht
             einfacher werden lässt.
@@ -42,7 +48,7 @@
         \paragraph{}
             Um dabei auch wirklich das Gesundheitspersonal maximal zu entlasten, besteht unser
             Lösungsansatz nicht etwa aus einer Hotline. Ziel ist es ein AI gestützes System zu entwickeln,
-            welches ganz ohne Menschliche Interaktion auf seiten der Gesundheitsbranche auskommt.
+            welches ganz ohne Menschliche Interaktion auskommt.
 
 
 \newpage
@@ -55,8 +61,8 @@
 
     \subsection{Übersicht}
         \paragraph{}
-        Nachfolgend ist in \ref{fig:backEndFlowChart} der logische Ablauf, des Dialogflows zu sehen, welcher das
-        unseres Chatbots bildet.
+        In Abbildung \ref{fig:backEndFlowChart} ist der logische Ablauf, des Dialogflows zu sehen, welcher das
+        Backend unseres Chatbots bildet.
         \begin{figure}[h!]
             \begin{center}
                 \includegraphics[width=0.6\linewidth]{ressources/backendOverview.png}
@@ -80,7 +86,7 @@
         \paragraph{}
             Im ersten Intent, des Dialogs - "check\_symtpoms" - wird eine Liste an
             symptomen, sowie ein Schmerzniveau und die Zeitdauer, seit dem die Symptome
-            bestehen aufgenommen.
+            bestehen, aufgenommen.
 
         \paragraph{}
             Folgende Trainingssätze, wurden für das Auslösen des Intents definiert:
@@ -114,7 +120,7 @@
             
             \paragraph{}
                 \textbf{symtom\_type} hat einen Wertebereich von: pain, unwell,
-                sick, fever, cough, loss of taste, chestpain, tiredness \& shortness of breath. Mit jeweils 3 bis 4 
+                sick, fever, cough, loss of taste, chestpain, tiredness und shortness of breath. Mit jeweils 3 bis 4 
                 Synonymoen.
             
             \paragraph{}
@@ -122,13 +128,13 @@
                 Buchstäblich (z.B. 1).
             
             \paragraph{}
-                \textbf{Sys.Date} ist ein vorgefertigtes Entity mit einem Wertebereich, welcher beliebige Kelanderdaten
+                \textbf{System.Date} ist ein vorgefertigtes Entity mit einem Wertebereich, welcher beliebige Kalenderdaten
                 enthalten kann.
     \subsection{Auswertung der Symptome}
         \paragraph{}
             In einem zweiten Schritt geht es nun darum die Angaben auszuwerten, damit dem Patienten tipps, zu weiterem verhalten
             gegeben werden können. Die Auswertung findet am ende des Intents statt, indem ein Webhook aufgerufen wird.
-            Hier ist als Antwort auf den entsprechenden Intent "check\_symptoms" eine entsprechende Funktion "checkSymptoms" (Siehe: \ref{fig:checksymptomsfunction})
+            Hier ist als Antwort auf den entsprechenden Intent "check\_symptoms" eine entsprechende Funktion "checkSymptoms" (Siehe: Abbildung \ref{fig:checksymptomsfunction})
             registriert.
         \begin{figure}[h!]
             \begin{center}
@@ -140,7 +146,7 @@
         \paragraph{}
             Auf den Zeilen 3 bis 8 werden die angegebenen Symptome mit dem Array \emph{coronaSymptoms} verglichen und gezählt.
             Auf Zeile 10 wird überprüft, ob die Anzahl der auf Corona-Symptome passenden Symptome grösser als 3 Ist. Ist dies
-            der Fall wird unabhängig der anderen Parameter eine Entsprechende Nachricht zurückgesanddt, welche den Benutzer überprüft
+            der Fall wird unabhängig der anderen Parameter eine Entsprechende Nachricht zurückgesandt, welche den Benutzer über
             diesen Umstand informiert, und ihm vorschlägt, sich zu isolieren und testen zu lassen.
 
         \paragraph{}
@@ -156,13 +162,13 @@
 
         \paragraph{}
             Alle Antworten, fragen den Benutzer, ob er einen Arzttermin buchen will. Mit den Intents \emph{check\_symptoms - yes} und \emph{check\_symptoms - no}
-            (Siehe: \ref{fig:intentslist}) wird die Antwort des Benutzers abgefangen. Während \emph{check\_symptoms - no} zu einer verabschiedungsantwort führt,
-            fragt \emph{check\_symptoms - yes} direkt, danach wann der Termin gerne Stattfinden würde.
+            (Siehe: Abbildung \ref{fig:intentslist}) wird die Antwort des Benutzers abgefangen. Während \emph{check\_symptoms - no} zu einer Verabschiedungsantwort führt,
+            fragt \emph{check\_symptoms - yes} direkt, danach wann der Termin stattfinden soll.
 
     \subsection{Termin buchen}
         \paragraph{}
             Der Intent \emph{check\_symptoms - yes - time} fängt die Antwort des vorgehenden Intents (Frage nach Terminzeit) direkt ab und löst im Webhook
-            eine weitere Methode aus.
+            eine weitere Methode aus (Abbildung \ref{fig:handleappointmentfunction}).
         \begin{figure}[h!]
             \begin{center}
                 \includegraphics[width=0.7\linewidth]{ressources/handleAppointmentFunction.png}
@@ -174,12 +180,12 @@
         \paragraph{}
             Die ersten 7 Zeilen der Funktion kümmern sich um das Parsen des Datums. Da dieses nicht immer gleich daher kommt,
             musste ein wenig logik, zur überprüfung der Daten implementiert werden. Zeile 8 prüft, ob die Uhrzeit zwischen 08:00
-            und 20:00 liegt. Alles zwischen diesen zwei Zeitpunkten ist als Gültige Uhrzeit definiert, und führt dazu dass die
-            Buchung auf Zeile 13 Bestätigt wird. Der Dialog ist hiermit beendet. Liegt die Zeit allerdings ausserhalb des gültigen
-            bereichs, wird auf den Zeilen 9 und 10 eine Fehlernachricht zurückgegeben und nach einer neuen Zeit gefragt.
-            Auf Zeile 11 wird als folgeintent das Event \emph{set\_appointment\_time} definiert. Dieses Event zeit auf denselben 
-            Intent, auf dem wir gerade operieren (\emph{check\_symptoms - yes -time}). Dies führt dazu das eine Logikschlaufe für 
-            die Terminbuchung entsteht, bis eine gültige Zeit angegeben wird.
+            und 20:00 Uhr liegt. Alles zwischen diesen zwei Zeitpunkten ist als gültige Uhrzeit definiert, und führt dazu, dass die
+            Buchung auf Zeile 13 bestätigt wird. Der Dialog ist hiermit beendet. Liegt die Zeit allerdings ausserhalb des gültigen
+            Bereichs, wird auf den Zeilen 9 und 10 eine Fehlernachricht zurückgegeben und nach einer neuen Zeit gefragt.
+            Auf Zeile 11 wird als Folgeintent das Event \emph{set\_appointment\_time} definiert. Dieses Event zeigt auf denselben 
+            Intent, auf dem wir gerade operieren (\emph{check\_symptoms - yes - time}). Die Terminbuchung wird also wiederholt, bis
+            eine gültige Zeit für den Termin angegeben wird. 
 
         \begin{figure}[h!]
             \begin{center}
@@ -194,27 +200,27 @@
 \section{Discussion}
     \subsection{Was wir gelernt haben}
         \paragraph{}
-            Bei der umsetzung dieses Projekts, haben wir gelernt, dass die Dialogflow Plattform sich äusserst gut eignet, um Schnittstellen
-            zwischen Menschen und Informatik systemen zu konstruieren. Die so erschaffenen benutzeroberflächen sind, wenn richtig umgesetzt,
+            Bei der Umsetzung dieses Projekts, haben wir gelernt, dass die Dialogflow Plattform sich äusserst gut eignet, um Schnittstellen
+            zwischen Menschen und Informatiksystemen zu konstruieren. Die so erschaffenen Benutzeroberflächen sind, wenn richtig umgesetzt,
             sehr intuitiv zu bedienen. Sehr viel potential bietet diese Technologie aus unserer sicht auch, wenn es darum geht, Menschen mit
-            behinderung, den zugang zu diversen Programmen zu verschaffen. Das bekannteste Beispiel sind dabei moderne Sprachassistenten.
+            körperlichen Einschrännkungen, den zugang zu diversen Programmen zu verschaffen. Das bekannteste Beispiel sind dabei moderne Sprachassistenten.
     \subsection{Limitationen}
         \paragraph{}
             Wenn man an AI denkt, geht man schnell davon aus, dass sich eine Interaktion mit einem System kaum noch von einer Interaktion mit einem
             Menschen unterscheidet. Dies mag vielleicht in Zukunft der Fall sein, ist es aber heute noch nicht. 
         \paragraph{}
-            Dialogflow, kommt schnell an seine Grenzen, wenn man den Chat-Bot mit ungenauen oder zusätzlichen (unnötigen) Inofrmationen beliefert,
+            Dialogflow, kommt schnell an seine Grenzen, wenn man den Chat-Bot mit ungenauen oder zusätzlichen (unnötigen) Informationen beliefert,
             für die er nicht trainiert wurde. 
-    \subsection{Weiterführbarkeit}
+    \subsection{Erweiterungsmöglichkeiten unserer Arbeit}
         \paragraph{}
             Um die Aufnahme der Informationen weiter zu verbessern, könnte der Satz an Trainingssätzen erweitert werden, sodass es weniger häufig
             zu Misverständinissen, durch einfache Schreibfehler kommt.
         \paragraph{}
             Weiter könnte man unseren Chatbot durch folgende features erweitern um ihn für einen produktiven Einsatz vorzubereiten:
             \begin{itemize}
-                \item Buchungssystem mit persistenten Daten und konfliktauflösung
-                \item Zuweisung von Patienten an Ärzte mit unterschiedlichen Spezialisierungen, anhand der Symptome
-                \item Implementation eines Webinterfaces und Anbindung an den Chatbot
+                \item Buchungssystem mit persistenten Daten und konfliktauflösung.
+                \item Zuweisung von Patienten an Ärzte mit unterschiedlichen Spezialisierungen, anhand der Symptome.
+                \item Implementation eines Webinterfaces oder Interface mit einem Sprachassistenten. 
             \end{itemize}
 
 \end{document} 
