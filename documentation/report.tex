@@ -44,6 +44,7 @@
             Lösungsansatz nicht etwa aus einer Hotline. Ziel ist es ein AI gestützes System zu entwickeln,
             welches ganz ohne Menschliche Interaktion auf seiten der Gesundheitsbranche auskommt.
 
+
 \newpage
 
 \section{Java Client}
@@ -51,7 +52,21 @@
 \newpage
 
 \section{Backend}
+
     \subsection{Übersicht}
+        \paragraph{}
+        Nachfolgend ist in \ref{fig:backEndFlowChart} der logische Ablauf, des Dialogflows zu sehen, welcher das
+        unseres Chatbots bildet.
+        \begin{figure}[h!]
+            \begin{center}
+                \includegraphics[width=0.6\linewidth]{ressources/backendOverview.png}
+            \end{center}
+            \caption{Backend Übersicht-Flowchart}
+            \label{fig:backEndFlowChart}
+        \end{figure}
+        \newpage
+
+    \subsection{Intents}
         \paragraph{}
             Das Backend ist in 4 Intents strukturiert
             \begin{figure}[h!]
@@ -168,16 +183,38 @@
 
         \begin{figure}[h!]
             \begin{center}
-                \includegraphics[width=0.4\linewidth]{ressources/eventSetting.png}
+                \includegraphics[width=0.5\linewidth]{ressources/eventSetting.png}
             \end{center}
-            \caption{Eventeinstellung für die Schleiflogik}
+            \caption{Eventeinstellung für die Schleifenlogik}
             \label{fig:eventSetting}
         \end{figure}
-
-        
+ 
 \newpage
 
 \section{Discussion}
-
+    \subsection{Was wir gelernt haben}
+        \paragraph{}
+            Bei der umsetzung dieses Projekts, haben wir gelernt, dass die Dialogflow Plattform sich äusserst gut eignet, um Schnittstellen
+            zwischen Menschen und Informatik systemen zu konstruieren. Die so erschaffenen benutzeroberflächen sind, wenn richtig umgesetzt,
+            sehr intuitiv zu bedienen. Sehr viel potential bietet diese Technologie aus unserer sicht auch, wenn es darum geht, Menschen mit
+            behinderung, den zugang zu diversen Programmen zu verschaffen. Das bekannteste Beispiel sind dabei moderne Sprachassistenten.
+    \subsection{Limitationen}
+        \paragraph{}
+            Wenn man an AI denkt, geht man schnell davon aus, dass sich eine Interaktion mit einem System kaum noch von einer Interaktion mit einem
+            Menschen unterscheidet. Dies mag vielleicht in Zukunft der Fall sein, ist es aber heute noch nicht. 
+        \paragraph{}
+            Dialogflow, kommt schnell an seine Grenzen, wenn man den Chat-Bot mit ungenauen oder zusätzlichen (unnötigen) Inofrmationen beliefert,
+            für die er nicht trainiert wurde. 
+    \subsection{Weiterführbarkeit}
+        \paragraph{}
+            Um die Aufnahme der Informationen weiter zu verbessern, könnte der Satz an Trainingssätzen erweitert werden, sodass es weniger häufig
+            zu Misverständinissen, durch einfache Schreibfehler kommt.
+        \paragraph{}
+            Weiter könnte man unseren Chatbot durch folgende features erweitern um ihn für einen produktiven Einsatz vorzubereiten:
+            \begin{itemize}
+                \item Buchungssystem mit persistenten Daten und konfliktauflösung
+                \item Zuweisung von Patienten an Ärzte mit unterschiedlichen Spezialisierungen, anhand der Symptome
+                \item Implementation eines Webinterfaces und Anbindung an den Chatbot
+            \end{itemize}
 
 \end{document} 
