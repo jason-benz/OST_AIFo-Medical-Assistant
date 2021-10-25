@@ -35,9 +35,14 @@ public class DialogflowConnector {
     private void handleIntent(QueryResult queryResult, MedicalAssistant medicalAssistant) throws ParseException {
         String intent = queryResult.getIntent().getDisplayName();
 
-        if (intent.equals("check_symptoms")) {
-            medicalAssistant.checkCorona(queryResult.getWebhookPayload());
-            medicalAssistant.updateHealthInfo(queryResult.getParameters());
+        switch (intent) {
+            case "check_symptoms":
+                medicalAssistant.checkCorona(queryResult.getWebhookPayload());
+                medicalAssistant.updateHealthInfo(queryResult.getParameters());
+                break;
+            case "check_symptoms - yes - time":
+                medicalAssistant.updateAppointment(queryResult.getParameters());
+                break;
         }
     }
 }
