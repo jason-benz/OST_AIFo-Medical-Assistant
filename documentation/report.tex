@@ -9,6 +9,7 @@
 \usepackage{csquotes}
 \MakeOuterQuote{"}
 \usepackage{graphicx}
+\graphicspath{ {./src/} }
 
 \renewcommand{\refname}{Referenzen}
 \renewcommand{\figurename}{Abbildung}
@@ -22,8 +23,6 @@
 \begin{document}
 \pagenumbering{gobble}
 \maketitle
-
-\newpage
 \tableofcontents
 \newpage
 
@@ -62,6 +61,7 @@
 
 \section{Java Client}
 
+
 \newpage
 
 \section{Backend}
@@ -72,7 +72,7 @@
         Backend unseres Chatbots bildet.
         \begin{figure}[h!]
             \begin{center}
-                \includegraphics[width=0.6\linewidth]{ressources/backendOverview.png}
+                \includegraphics[width=0.6\linewidth]{backendOverview.png}
             \end{center}
             \caption{Backend Übersicht-Flowchart}
             \label{fig:backEndFlowChart}
@@ -84,7 +84,7 @@
             Das Backend ist in 4 Intents strukturiert
             \begin{figure}[h!]
                 \begin{center}
-                    \includegraphics[width=0.5\linewidth]{ressources/intents.png}
+                    \includegraphics[width=0.5\linewidth]{intents.png}
                 \end{center}
                 \caption{Dialogflow intent liste}
                 \label{fig:intentslist}
@@ -145,7 +145,7 @@
             registriert.
         \begin{figure}[h!]
             \begin{center}
-                \includegraphics[width=\linewidth]{ressources/checkSymptoms.png}
+                \includegraphics[width=\linewidth]{checkSymptoms.png}
             \end{center}
             \caption{checkSymptoms Funktion}
             \label{fig:checksymptomsfunction}
@@ -178,7 +178,7 @@
             eine weitere Methode aus (Abbildung \ref{fig:handleappointmentfunction}).
         \begin{figure}[h!]
             \begin{center}
-                \includegraphics[width=0.7\linewidth]{ressources/handleAppointmentFunction.png}
+                \includegraphics[width=0.7\linewidth]{handleAppointmentFunction.png}
             \end{center}
             \caption{handleAppointment Funktion}
             \label{fig:handleappointmentfunction}
@@ -196,7 +196,7 @@
 
         \begin{figure}[h!]
             \begin{center}
-                \includegraphics[width=0.5\linewidth]{ressources/eventSetting.png}
+                \includegraphics[width=0.5\linewidth]{eventSetting.png}
             \end{center}
             \caption{Eventeinstellung für die Schleifenlogik}
             \label{fig:eventSetting}
