@@ -60,12 +60,88 @@
 \newpage
 
 \section{Java Client}
-
-
+	Der Java Client ist in die folgenden drei Bereiche aufgeteilt, welche in den nachfolgenden Unterkapitel genauer beschrieben werden:
+	\begin{enumerate}
+		\item Command Line Interface
+		\item Dialogflow Connector
+		\item Medical Assistant
+	\end{enumerate}
+	
+	\subsection{Command Line Interface}
+		Beim Start des Medical Assistants im Java Client wird der User auf folgende Möglichkeiten hingewiesen:
+		\begin{itemize}
+			\item Input mit dem medizinischen Problem angeben
+			\item "q" um den Assistenten wieder zu beenden
+			\item "v" um den persönlichen medizinischen Bericht anzuschauen
+		\end{itemize}
+		%
+		Die logische Abfolge des Benutzerinputs, bzw. die Interaktion mit dem Dialogflow Chatbot ist analog zum beschriebenen Ablauf in Abildung \ref{fig:backEndFlowChart}. Nach jeder Antwort des Chatbots können die Optionen "q" und "v" aufgerufen werden.
+	
+	\subsection{Dialogflow Connector}
+		Beim Projekttyp handelt es sich um ein Maven-Projekt. Für die Interaktion mit Dialogflow wurde das Artefakt "google-cloud-dialogflow" verwendet.
+		
+		\paragraph{}
+		Die Einbindung, sowie die Basisimplementierung (Dialogflow Kommunikation) war bereits Bestandteil einer Übungsstunde. Deshalb wird dies als Vorwissen angeschaut und in diesem Report nicht weiter thematisiert. Projektspezifische Anwendungsfälle werden in den entsprechenden Kapiteln beschrieben.
+	
+	\subsection{Medical Assistant Implementation}
+		\subsubsection{Report}
+			Neben der Interaktion mit dem Dialogflow Chatbot ist das Hauptziel des Java Clients, dem Benutzer einen medizinischen Bericht zur Verfügung zu stellen. Wenn dieser mit dem CLI Kommando "v" abgerufen wird, ist dieser zu Beginn leer:
+			\begin{figure}[h!]
+				\begin{center}
+            		\includegraphics[width=0.85\linewidth]{JavaClient-EmptyReport.png}
+		            \caption{Leerer medizinischer Report}
+		            \label{fig:javaClient_emptyReport}
+				\end{center}
+	        \end{figure}
+	        
+	        Fortlaufend - basierend auf den User-Inputs, sowie den Chatbot Antworten - wird der Report ergänzt (siehe: \ref{sssec:intent_handling}). Am Ende kann der ausgefüllte Bericht zum Beispiel folgendermassen aussehen:
+			\begin{figure}[h!]
+				\begin{center}
+            		\includegraphics[width=0.65\linewidth]{JavaClient-CompletedReport.png}
+		            \caption{Komplett ausgefüllter Beispiel-Report}
+		            \label{fig:javaClient_completedReport}
+				\end{center}
+	        \end{figure}
+		
+		\subsubsection{Intent Handling} \label{sssec:intent_handling}			
+		Die für den Java Client relevanten Intents sind \emph{"check\_symptoms"}, sowie der Folge-Intent \emph{"check\_symptoms - yes - time"}. Via Switch-Case Statement werden Intent-spezifische Aktionen durgeführt, welche schlussendlich den medizinischen Bericht aktualisieren. \\\\
+		
+		\underline{\emph{Intent "check\_symptoms"}} \\
+		\begin{enumerate}
+			\item Via Dialogflow Backend wird dynamisch anhand der Symptome ermittelt, ob der Benutzer eventuell Corona hat. Diese Information wird über den Payload an den Java Client übermittelt. Das Query-Result im Java Code enthält die Methode \emph{"getWebhookPayload()"}, welche den Zugriff auf den Payload als Struct ermöglicht. Auf dieser Datenbasis wird der Report entsprechend um das Attribut \emph{"hasMaybeCorona"} ergänzt.
+			\begin{figure}[h!]
+				\begin{center}
+            		\includegraphics[width=0.8\linewidth]{JavaClient-CoronaCheck.png}
+					\caption{Corona Payload zum Report hinzufügen}
+					\label{fig:javaClient_coronaCheck}
+				\end{center}
+			\end{figure}
+			
+			\item Im nächsten Schritt werden alle aktualisierten Parameter auf dem Report im Java Client hinterlegt. Nachfolgend ist ein Ausschnitt der Aktualisierung des ersten Parameters zu sehen. Alle anderen Parameter werden im Swicht-Case Statement analog zu diesem Beispiel aktualisiert.
+			\begin{figure}[h!]
+				\begin{center}
+            		\includegraphics[width=0.8\linewidth]{JavaClient-ParameterHandling.png}
+					\caption{Ausschnitt der Report Aktualisierung}
+					\label{fig:javaClient_parameterHandling}
+				\end{center}
+			\end{figure}
+		\end{enumerate}
+		
+		\underline{\emph{Intent "check\_symptoms - yes - time"}} \\
+		\begin{enumerate}
+			\item In diesem Intent wird noch der Arzttermin auf dem Report aktualisiert.
+			\begin{figure}[h!]
+				\begin{center}
+            		\includegraphics[width=1.0\linewidth]{JavaClient-UpdateAppointment.png}
+					\caption{Arzttermin auf dem Report hinzufügen}
+					\label{fig:javaClient_updateAppointment}
+				\end{center}
+			\end{figure}
+		\end{enumerate}
+	        
 \newpage
 
 \section{Backend}
-
     \subsection{Übersicht}
         \paragraph{}
         In Abbildung \ref{fig:backEndFlowChart} ist der logische Ablauf, des Dialogflows zu sehen, welcher das
@@ -73,9 +149,9 @@
         \begin{figure}[h!]
             \begin{center}
                 \includegraphics[width=0.6\linewidth]{backendOverview.png}
+                \caption{Backend Übersicht-Flowchart}
+                \label{fig:backEndFlowChart}
             \end{center}
-            \caption{Backend Übersicht-Flowchart}
-            \label{fig:backEndFlowChart}
         \end{figure}
         \newpage
 
@@ -85,9 +161,9 @@
             \begin{figure}[h!]
                 \begin{center}
                     \includegraphics[width=0.5\linewidth]{intents.png}
+                    \caption{Dialogflow intent liste}
+                    \label{fig:intentslist}
                 \end{center}
-                \caption{Dialogflow intent liste}
-                \label{fig:intentslist}
             \end{figure}
     \subsection{Aufnahme von Symptomen}
         \paragraph{}
@@ -146,9 +222,9 @@
         \begin{figure}[h!]
             \begin{center}
                 \includegraphics[width=\linewidth]{checkSymptoms.png}
+                \caption{checkSymptoms Funktion}
+	            \label{fig:checksymptomsfunction}
             \end{center}
-            \caption{checkSymptoms Funktion}
-            \label{fig:checksymptomsfunction}
         \end{figure}
         \paragraph{}
             Auf den Zeilen 3 bis 8 werden die angegebenen Symptome mit dem Array \emph{coronaSymptoms} verglichen und gezählt.
@@ -179,9 +255,9 @@
         \begin{figure}[h!]
             \begin{center}
                 \includegraphics[width=0.7\linewidth]{handleAppointmentFunction.png}
+				\caption{handleAppointment Funktion}
+	            \label{fig:handleappointmentfunction}
             \end{center}
-            \caption{handleAppointment Funktion}
-            \label{fig:handleappointmentfunction}
         \end{figure}
 
         \paragraph{}
@@ -197,9 +273,9 @@
         \begin{figure}[h!]
             \begin{center}
                 \includegraphics[width=0.5\linewidth]{eventSetting.png}
+				\caption{Eventeinstellung für die Schleifenlogik}
+            	\label{fig:eventSetting}
             \end{center}
-            \caption{Eventeinstellung für die Schleifenlogik}
-            \label{fig:eventSetting}
         \end{figure}
  
 \newpage
