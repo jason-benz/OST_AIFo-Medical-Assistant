@@ -236,7 +236,15 @@
 			\end{itemize}
 			Die logische Abfolge des Benutzerinputs, bzw. die Interaktion mit dem Dialogflow Chatbot ist analog zum beschriebenen 
 			Ablauf in Abildung \ref{fig:backEndFlowChart}. Nach jeder Antwort des Chatbots können die Optionen \emph{"q"} (beenden) und 
-			\emph{"v"} (Report anschauen) aufgerufen werden.
+			\emph{"v"} (Report anschauen) aufgerufen werden. \\\\
+			Die Kommunikation zwischen dem User und dem Java Client kann zum Beispiel folgendermassen aussehen:
+			\begin{figure}[h!]
+				\begin{center}
+       	    		\includegraphics[width=0.7\linewidth]{JavaClient-ExampleConversation.png}
+	    	        \caption{Ausschnitt einer möglichen Chatbot Interaktion}
+	        	    \label{fig:javaClient_exampleConversation}
+				\end{center}
+	        \end{figure}
 	
 	\subsection{Dialogflow Connector}
 		\paragraph{}
@@ -261,10 +269,6 @@
 					\end{center}
 		        \end{figure}
 		        
-		        
-		        \newpage
-		        
-		        
 	        	Fortlaufend - basierend auf den User-Inputs, sowie den Chatbot Antworten - wird der Report ergänzt (siehe:
 	        	\ref{sssec:intent_handling}). Am Ende kann der ausgefüllte Bericht zum Beispiel folgendermassen aussehen:
 				\begin{figure}[h!]
@@ -279,7 +283,11 @@
 			\paragraph{}
 				Die für den Java Client relevanten Intents sind \emph{"check\_symptoms"}, sowie der Folge-Intent 
 				\emph{"check\_symptoms - yes - time"}. Via Switch-Case Statement werden Intent-spezifische Aktionen durgeführt,
-				welche schlussendlich den medizinischen Bericht aktualisieren. \\\\
+				welche schlussendlich den medizinischen Bericht aktualisieren. 
+				
+				
+				\newpage
+				
 		
 				\underline{\emph{Intent "check\_symptoms"}} \\
 				\begin{enumerate}
@@ -294,10 +302,6 @@
 								\label{fig:javaClient_coronaCheck}
 							\end{center}
 						\end{figure}
-					
-					
-					\newpage
-					
 					
 					\item Im nächsten Schritt werden alle aktualisierten Parameter auf dem Report im Java Client hinterlegt. 
 						Nachfolgend ist ein Ausschnitt der Aktualisierung des ersten Parameters zu sehen. Alle anderen Parameter 
