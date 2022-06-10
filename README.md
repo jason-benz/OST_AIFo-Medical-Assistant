@@ -1,4 +1,4 @@
-# Medical Assitant
+# Medical Assistant
 A chatbot to detect if Corona symptoms are present.
 
 # Contribution information
