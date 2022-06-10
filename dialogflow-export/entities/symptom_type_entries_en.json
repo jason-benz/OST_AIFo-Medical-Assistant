@@ -1,0 +1,77 @@
+[
+  {
+    "value": "pain",
+    "synonyms": [
+      "painfull",
+      "agony",
+      "ache",
+      "pain"
+    ]
+  },
+  {
+    "value": "unwell",
+    "synonyms": [
+      "unwell"
+    ]
+  },
+  {
+    "value": "sick",
+    "synonyms": [
+      "sick",
+      "sickness",
+      "ill",
+      "illness",
+      "nausea",
+      "unwell"
+    ]
+  },
+  {
+    "value": "fever",
+    "synonyms": [
+      "fever",
+      "temperature",
+      "body temperature"
+    ]
+  },
+  {
+    "value": "cough",
+    "synonyms": [
+      "cough",
+      "soar throat",
+      "dry cough"
+    ]
+  },
+  {
+    "value": "loss of taste",
+    "synonyms": [
+      "loss of taste",
+      "taste loss",
+      "no taste"
+    ]
+  },
+  {
+    "value": "chestpain",
+    "synonyms": [
+      "chestpain",
+      "pain in the chest"
+    ]
+  },
+  {
+    "value": "tiredness",
+    "synonyms": [
+      "tiredness",
+      "tired",
+      "very tired",
+      "sleepy"
+    ]
+  },
+  {
+    "value": "shortness of breath",
+    "synonyms": [
+      "shortness of breath",
+      "hard to breathe",
+      "low breath",
+      "breathing difficulties"
+    ]
+  }
+]

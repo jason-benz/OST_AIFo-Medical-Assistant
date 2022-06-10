@@ -1,0 +1,134 @@
+[
+  {
+    "id": "8bc57820-b2b5-42b3-a98b-e9eec956002e",
+    "data": [
+      {
+        "text": "i have ",
+        "userDefined": false
+      },
+      {
+        "text": "pain",
+        "meta": "@symptom_type",
+        "alias": "SymType",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "since yesterday",
+        "meta": "@sys.date",
+        "alias": "SymStart",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "cb3145ed-004b-4166-8863-570055b75dab",
+    "data": [
+      {
+        "text": "i have ",
+        "userDefined": false
+      },
+      {
+        "text": "pain",
+        "meta": "@symptom_type",
+        "alias": "SymType",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "beaf1453-fa7e-4477-82e6-e9aac86c3366",
+    "data": [
+      {
+        "text": "i need help",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "8dabd9ac-a03e-476c-a6fe-6399c8aef832",
+    "data": [
+      {
+        "text": "Should i go to the doctor?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "329ed8d3-0e95-4c87-ab58-f37c05d75176",
+    "data": [
+      {
+        "text": "Can you tell me if i should see a doctor?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "223bc549-9629-4f56-a1eb-1aca4ebdeac9",
+    "data": [
+      {
+        "text": "Am I Sick?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "4c9e8225-7d13-4178-8ae4-7b30e7d43575",
+    "data": [
+      {
+        "text": "I feel Sick",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "a65e243f-dd23-4b00-a384-ec0793ace033",
+    "data": [
+      {
+        "text": "I feel ",
+        "userDefined": false
+      },
+      {
+        "text": "unwell",
+        "meta": "@symptom_type",
+        "alias": "SymType",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

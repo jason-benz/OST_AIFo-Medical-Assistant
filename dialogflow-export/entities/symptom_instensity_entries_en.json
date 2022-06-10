@@ -1,0 +1,48 @@
+[
+  {
+    "value": "1",
+    "synonyms": [
+      "1",
+      "one",
+      "low",
+      "little",
+      "not very intense"
+    ]
+  },
+  {
+    "value": "2",
+    "synonyms": [
+      "2",
+      "two",
+      "a bit",
+      "more than one",
+      "a bit intense"
+    ]
+  },
+  {
+    "value": "3",
+    "synonyms": [
+      "3",
+      "much",
+      "three",
+      "more than two"
+    ]
+  },
+  {
+    "value": "4",
+    "synonyms": [
+      "4",
+      "four",
+      "quite much"
+    ]
+  },
+  {
+    "value": "5",
+    "synonyms": [
+      "5",
+      "five",
+      "very much",
+      "extremely intense"
+    ]
+  }
+]

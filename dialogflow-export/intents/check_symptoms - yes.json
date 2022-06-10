@@ -1,0 +1,62 @@
+{
+  "id": "2da1c94c-56e3-416e-873f-81b6b6583e04",
+  "parentId": "1945ec2e-bb67-464f-a7e4-41460ea8b999",
+  "rootParentId": "1945ec2e-bb67-464f-a7e4-41460ea8b999",
+  "name": "check_symptoms - yes",
+  "auto": true,
+  "contexts": [
+    "check_symptoms-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "check_symptoms.check_symptoms-yes",
+      "affectedContexts": [
+        {
+          "name": "check_symptoms-yes-followup",
+          "lifespan": 2
+        }
+      ],
+      "parameters": [
+        {
+          "id": "b00b62eb-505f-4371-a794-48faf2cb7ec9",
+          "name": "corona",
+          "required": false,
+          "dataType": "@sys.any",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "When would you like to see a doctor?"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [
+    {
+      "name": "check_symptoms_yes"
+    }
+  ],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

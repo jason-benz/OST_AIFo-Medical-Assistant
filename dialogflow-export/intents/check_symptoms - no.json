@@ -1,0 +1,40 @@
+{
+  "id": "3a709ced-5326-428b-9542-43f5ce019c82",
+  "parentId": "1945ec2e-bb67-464f-a7e4-41460ea8b999",
+  "rootParentId": "1945ec2e-bb67-464f-a7e4-41460ea8b999",
+  "name": "check_symptoms - no",
+  "auto": true,
+  "contexts": [
+    "check_symptoms-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "check_symptoms.check_symptoms-no",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Please let us know, if there\u0027s anything else, we can help you with."
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "endInteraction": true
+}

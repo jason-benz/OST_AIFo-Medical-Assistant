@@ -1,0 +1,9 @@
+{
+  "id": "721426cb-6b8e-406b-b9b8-3989206af418",
+  "name": "symptom_duration",
+  "isOverridable": true,
+  "isEnum": false,
+  "isRegexp": false,
+  "automatedExpansion": false,
+  "allowFuzzyExtraction": false
+}

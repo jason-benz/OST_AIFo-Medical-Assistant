@@ -1,0 +1,9 @@
+{
+  "id": "d412960c-a774-4010-96f1-b5919a57494a",
+  "name": "corona",
+  "isOverridable": true,
+  "isEnum": false,
+  "isRegexp": false,
+  "automatedExpansion": false,
+  "allowFuzzyExtraction": false
+}

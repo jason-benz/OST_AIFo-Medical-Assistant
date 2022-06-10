@@ -1,0 +1,9 @@
+{
+  "id": "0daffdc4-fce8-428e-90b0-311c2db469be",
+  "name": "symptom_instensity",
+  "isOverridable": true,
+  "isEnum": false,
+  "isRegexp": false,
+  "automatedExpansion": false,
+  "allowFuzzyExtraction": false
+}

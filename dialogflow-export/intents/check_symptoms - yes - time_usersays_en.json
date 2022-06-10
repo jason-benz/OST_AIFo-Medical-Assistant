@@ -1,0 +1,47 @@
+[
+  {
+    "id": "b20bac16-a648-4614-a820-252936394a00",
+    "data": [
+      {
+        "text": "in one week",
+        "meta": "@sys.date-time",
+        "alias": "AppointmentTime",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "cb44146b-f12f-4aa2-99de-ad47452f6aac",
+    "data": [
+      {
+        "text": "now",
+        "meta": "@sys.date-time",
+        "alias": "AppointmentTime",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "b0d8cde7-cadd-4c2e-a933-1b78d3c2e2ab",
+    "data": [
+      {
+        "text": "tomorrow at 11 p.m",
+        "meta": "@sys.date-time",
+        "alias": "AppointmentTime",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

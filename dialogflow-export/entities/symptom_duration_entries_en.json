@@ -1,0 +1,34 @@
+[
+  {
+    "value": "a day",
+    "synonyms": [
+      "a day",
+      "one day",
+      "1 day"
+    ]
+  },
+  {
+    "value": "a week",
+    "synonyms": [
+      "a week",
+      "one week",
+      "1 week"
+    ]
+  },
+  {
+    "value": "a month",
+    "synonyms": [
+      "a month",
+      "one month",
+      "1 month"
+    ]
+  },
+  {
+    "value": "a year",
+    "synonyms": [
+      "a year",
+      "one year",
+      "1 year"
+    ]
+  }
+]

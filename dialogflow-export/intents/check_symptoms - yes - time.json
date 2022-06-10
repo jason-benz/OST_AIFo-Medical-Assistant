@@ -1,0 +1,55 @@
+{
+  "id": "921ab9b6-b795-47dc-8a89-8fb47b28256e",
+  "parentId": "2da1c94c-56e3-416e-873f-81b6b6583e04",
+  "rootParentId": "1945ec2e-bb67-464f-a7e4-41460ea8b999",
+  "name": "check_symptoms - yes - time",
+  "auto": true,
+  "contexts": [
+    "check_symptoms-yes-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "check_symptoms.check_symptoms-yes.check_symptoms-yes-custom",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "29d6d67c-e335-42ea-9ea2-3984651b213f",
+          "name": "AppointmentTime",
+          "required": true,
+          "dataType": "@sys.date-time",
+          "value": "$AppointmentTime",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [
+    {
+      "name": "set_appointment_time"
+    }
+  ],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}
