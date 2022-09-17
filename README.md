@@ -6,8 +6,9 @@ A chatbot to detect if Corona symptoms are present.
 - School: [OST - Eastern Switzerland University of Applied Sciences](https://www.ost.ch/)
 - Module: AI Foundations (AIFo)
 - Semester: Autmn 2021
-- Advisor: Prof. Dr. Marco Lehmann
-- Final grade: 5.6 / 6
+- Advisor: Prof. Dr. Marco Lehmann and Prof. Dr. Mitra Purandare
+- Project grade: 5.6 / 6.0
+- Presentation grade: 5.5 / 6.0
 
 # Overview
 The goal of the project is to create a basic chatbot. The use of [Google Dialogflow](https://cloud.google.com/dialogflow/docs) is mandatory. The client for interaction with Google Dialogflow can be created in a language and on a system of the student's choice. For the client, we decided to create a console application using Java. Since this is a school project, it is only a software draft with limited functionality. For a productive operation, further development and extensive testing would be necessary.
